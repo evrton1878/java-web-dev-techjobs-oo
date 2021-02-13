@@ -92,4 +92,44 @@ public class Job {
         return id;
     }
 
+    @Override
+    public String toString() {
+        String blankText = "Data not available";
+        String name;
+        String employer;
+        String location;
+        String positionType;
+        String coreCompetency;
+        if (this.name != null && !this.name.isBlank()) {
+            name = this.name;
+        } else {
+            name = blankText;
+        }
+        if (this.employer != null && !this.employer.getValue().isBlank()) {
+            employer = this.employer.toString();
+
+        } else {
+            employer = blankText;
+        }
+        if (this.location != null && !this.location.getValue().isBlank()) {
+            location = this.location.toString();
+
+        } else {
+            location = blankText;
+        }
+        if (this.positionType != null && !this.positionType.getValue().isBlank()) {
+            positionType = this.positionType.toString();
+        } else {
+            positionType = blankText;
+        }
+        if (this.coreCompetency != null && !this.coreCompetency.getValue().isBlank()) {
+            coreCompetency = this.coreCompetency.toString();
+        } else {
+            coreCompetency = blankText;
+        }
+
+            return ("\nID: " + id + "\nName: " + name + "\nEmployer: " + employer + "\nLocation: " + location + "\nPosition Type: " + positionType + "\nCore Competency: " + coreCompetency + "\n");
+
+    }
+
 }
