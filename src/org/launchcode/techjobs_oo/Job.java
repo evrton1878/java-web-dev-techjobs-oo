@@ -100,36 +100,43 @@ public class Job {
         String location;
         String positionType;
         String coreCompetency;
+        boolean hasId = true;
         if (this.name != null && !this.name.isBlank()) {
             name = this.name;
+            hasId = false;
         } else {
             name = blankText;
         }
         if (this.employer != null && !this.employer.getValue().isBlank()) {
             employer = this.employer.toString();
+            hasId = false;
 
         } else {
             employer = blankText;
         }
         if (this.location != null && !this.location.getValue().isBlank()) {
             location = this.location.toString();
+            hasId = false;
 
         } else {
             location = blankText;
         }
         if (this.positionType != null && !this.positionType.getValue().isBlank()) {
             positionType = this.positionType.toString();
+            hasId = false;
         } else {
             positionType = blankText;
         }
         if (this.coreCompetency != null && !this.coreCompetency.getValue().isBlank()) {
             coreCompetency = this.coreCompetency.toString();
+            hasId = false;
         } else {
             coreCompetency = blankText;
         }
-
+        if (hasId) {
+            return "\nID: " + id + "\nOOPS! This job does not seem to exist.\n";
+        } else {
             return ("\nID: " + id + "\nName: " + name + "\nEmployer: " + employer + "\nLocation: " + location + "\nPosition Type: " + positionType + "\nCore Competency: " + coreCompetency + "\n");
-
+        }
     }
-
 }
