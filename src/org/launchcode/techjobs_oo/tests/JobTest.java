@@ -58,12 +58,15 @@ public class JobTest {
         assertTrue(jobOne.toString().startsWith("\n"));
             //check for blank space at the end:
         assertTrue(jobOne.toString().endsWith("\n"));
+        //check  when all values are filled:
+        assertEquals(jobOne.toString(), "\nID: " + jobOne.getId() + "\nName: " + jobOne.getName() + "\nEmployer: " + jobOne.getEmployer() + "\nLocation: " + jobOne.getLocation() + "\nPosition Type: " + jobOne.getPositionType() + "\nCore Competency: " + jobOne.getCoreCompetency() + "\n");
            //set name to be blank:
         jobOne.setName("");
            //check for response to blank field:
-        assertEquals(jobOne.toString(), "\nID: " + jobOne.getId() + "\nName: Data not available \nEmployer:"  + jobOne.getEmployer() + "\nLocation: " + jobOne.getLocation() + "\nPosition Type: " + jobOne.getPositionType() + "\nCore Competency: " + jobOne.getCoreCompetency() + "\n");
-           //check  when all values are filled:
-        assertEquals(jobOne.toString(), "\nID: " + jobOne.getId() + "\nName: " + jobOne.getName() + "\nEmployer: " + jobOne.getEmployer() + "\nLocation: " + jobOne.getLocation() + "\nPosition Type: " + jobOne.getPositionType() + "\nCore Competency: " + jobOne.getCoreCompetency() + "\n");
+        assertEquals(jobOne.toString(), "\nID: " + jobOne.getId() + "\nName: Data not available\nEmployer: " + jobOne.getEmployer() + "\nLocation: " + jobOne.getLocation() + "\nPosition Type: " + jobOne.getPositionType() + "\nCore Competency: " + jobOne.getCoreCompetency() + "\n");
+
+
     }
+
 
 }
